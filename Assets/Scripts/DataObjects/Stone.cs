@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Stone : MonoBehaviour {
+public class Stone {
 
     public Stone(int Number, StoneColor Color,bool IsJoker)
     {
