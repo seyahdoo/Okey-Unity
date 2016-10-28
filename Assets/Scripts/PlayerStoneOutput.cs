@@ -4,7 +4,11 @@ using System.Collections.Generic;
 using System;
 
 public class PlayerStoneOutput : MonoBehaviour , IStoneDroppable {
-    
+
+   
+    public Player toGet;
+    public Player toGive;
+
     public List<Stone> stones;
 
     public Stone GetLastStone()

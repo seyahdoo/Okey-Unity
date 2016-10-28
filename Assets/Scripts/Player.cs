@@ -1,13 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
-public abstract class Player : MonoBehaviour {
+public class Player : MonoBehaviour {
+
+    public StonePlace spToGive;
+    public StonePlace spToGet;
 
     public bool IsAI = true;
     public bool IsMyTurn;
     public List<Stone> stones = new List<Stone>();
-
+    
     public delegate void VoidDelegate();
     public event VoidDelegate TurnFinishedEvent;
     public event VoidDelegate TurnStartedEvent;
@@ -24,26 +28,19 @@ public abstract class Player : MonoBehaviour {
 
     private IEnumerator PlayTurnRoutine()
     {
-        //Turn Started Event Trigger
-        if (TurnStartedEvent != null) TurnStartedEvent();
         
-
         //Play Turn Things
         //TODO: PLAY!
         yield return new WaitForSeconds(4f);
 
-        //DİĞER PLAYER DAN AL
-        //ORTADAN ÇEK
 
-
-        //STONE DAN BİRİNİ SEÇ AT.
-
-
-        //Turn Finished Event Trigger
-        if (TurnFinishedEvent != null) TurnFinishedEvent();
-        
+        TurnFinished();
         yield return null;
     }
 
+    protected void TurnFinished()
+    {
+        if (TurnFinishedEvent != null) TurnFinishedEvent();
+    }
 
 }

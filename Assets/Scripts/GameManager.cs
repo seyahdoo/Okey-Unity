@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour {
     public Player[] players;
     public Table table;
     public int PlayerTurn = 0;
+    public bool turnFinished;
 
     void Start()
     {
@@ -20,7 +21,7 @@ public class GameManager : MonoBehaviour {
     {
         List<Stone> stones = CreateAllStones();
         table.GiveStone(stones);
-
+        table.Scramle();
 
 
     }
@@ -96,22 +97,24 @@ public class GameManager : MonoBehaviour {
         {
             players[PlayerTurn].TurnFinishedEvent += TurnFinish;
             players[PlayerTurn].PlayTurn();
-            
+
             //wait for turn to finish
-            yield return new WaitForSeconds(1f);
+            yield return new WaitUntil(() => turnFinished);
+            players[PlayerTurn].TurnFinishedEvent -= TurnFinish;
 
             //check if game finished
             bool isF = LogicApi.IsFinished(players[PlayerTurn].stones);
+            //TODO this
 
-            players[PlayerTurn].TurnFinishedEvent -= TurnFinish;
             PlayerTurn++;
+            turnFinished = false;
         }
 
     }
 
     public void TurnFinish()
     {
-
+        turnFinished = true;
     }
 
 }
