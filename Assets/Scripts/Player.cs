@@ -23,6 +23,8 @@ public class Player : MonoBehaviour {
         if (TurnStartedEvent != null) TurnStartedEvent();
 
 
+
+
         //Play Turn Things
         //TODO: PLAY!
         yield return new WaitForSeconds(4f);

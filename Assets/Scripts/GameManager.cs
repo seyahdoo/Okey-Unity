@@ -6,6 +6,11 @@ public class GameManager : MonoBehaviour {
 
     public Player[] players;
     
+    void Start()
+    {
+        ResetGame();
+        StartGame();
+    }
 
     public void StartGame()
     {
@@ -34,6 +39,8 @@ public class GameManager : MonoBehaviour {
 
     private IEnumerator GameRoutine()
     {
+
+
         yield return null;
     }
 

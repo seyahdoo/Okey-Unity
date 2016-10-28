@@ -9,6 +9,9 @@ public partial class LogicApi {
         //Shouldn't say new Stone() !?
         //TODO: Write this stuff
 
+
+
+
         return false;
     }
     

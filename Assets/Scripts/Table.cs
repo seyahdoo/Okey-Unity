@@ -24,7 +24,10 @@ public class Table : MonoBehaviour {
         return null;
     }
 
-
+    public void GiveStone(List<Stone> Stones)
+    {
+        //TODO
+    }
 
 
 }
