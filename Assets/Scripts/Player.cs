@@ -32,6 +32,12 @@ public abstract class Player : MonoBehaviour {
         //TODO: PLAY!
         yield return new WaitForSeconds(4f);
 
+        //DİĞER PLAYER DAN AL
+        //ORTADAN ÇEK
+
+
+        //STONE DAN BİRİNİ SEÇ AT.
+
 
         //Turn Finished Event Trigger
         if (TurnFinishedEvent != null) TurnFinishedEvent();
