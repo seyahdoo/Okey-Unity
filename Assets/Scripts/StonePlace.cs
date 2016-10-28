@@ -7,7 +7,7 @@ public class StonePlace : MonoBehaviour ,IStoneDroppable, IDropHandler , IPointe
 {
 
     public Stone stone;
-
+    int countChild;
     public void DropStone(Stone stone)
     {
         this.stone = stone;
@@ -18,14 +18,17 @@ public class StonePlace : MonoBehaviour ,IStoneDroppable, IDropHandler , IPointe
         StoneRenderer stoneRenderer = eventData.pointerDrag.GetComponent<StoneRenderer>();
         if (stoneRenderer != null)
         {
-            stoneRenderer.parentToReturnTo = this.transform;
-            DropStone(stoneRenderer.stone);
+            if (countChild ==0)
+            {
+                stoneRenderer.parentToReturnTo = this.transform;
+                DropStone(stoneRenderer.stone);
+            }
         }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-
+        countChild = transform.childCount;
     }
 
     public void OnPointerExit(PointerEventData eventData)
