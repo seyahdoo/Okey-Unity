@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
 using System;
 
-public class PlayerStoneOutput : MonoBehaviour , IStoneDroppable {
+public class PlayerStoneOutput : MonoBehaviour , IStoneDroppable , IDropHandler, IPointerEnterHandler, IPointerExitHandler
+{
 
    
     public Player toGet;
@@ -34,5 +36,28 @@ public class PlayerStoneOutput : MonoBehaviour , IStoneDroppable {
     {
         stones.Push(stone);
         GameManager.instance.TurnFinish();
+    }
+
+    public void OnDrop(PointerEventData eventData)
+    {
+        StoneRenderer stoneRenderer = eventData.pointerDrag.GetComponent<StoneRenderer>();
+        if (stoneRenderer != null)
+        {
+            stoneRenderer.parentToReturnTo = this.transform;
+            DropStone(stoneRenderer.stone);
+        }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (eventData.pointerDrag != null)
+        {
+            Debug.Log(eventData.pointerDrag.transform.name);
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        Debug.Log("OnPointerExit");
     }
 }
