@@ -10,6 +10,8 @@ public class PlayerStoneOutput : MonoBehaviour , IStoneDroppable {
     public Player toGive;
 
     public Stack<Stone> stones = new Stack<Stone>();
+	float lerpingtime;
+	Transform StartPos;
 
     public Stone GetLastStone()
     {
@@ -33,6 +35,18 @@ public class PlayerStoneOutput : MonoBehaviour , IStoneDroppable {
     public void DropStone(Stone stone)
     {
         stones.Push(stone);
+		Move (stone);
         GameManager.instance.TurnFinish();
     }
+
+	IEnumerator Move(Stone stone)
+	{
+		StartPos = stone.transform.position;
+		while(lerpingtime < 3)
+		{
+			lerpingtime += Time.deltatime;
+			stone.transform.position = Vector3.Lerp(StartPos, transform.position, lerpingtime/3);
+		}
+	}
+
 }

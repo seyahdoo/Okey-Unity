@@ -4,7 +4,7 @@ using System.Collections;
 public class AiPlayer : Player {
 
 	int random;
-	 
+	int WhichStone;
     private IEnumerator PlayTurnRoutine()
     {
 
@@ -20,6 +20,9 @@ public class AiPlayer : Player {
         //	//Oyuncudan tas al
         //
         //	stone
+
+		WhichStone = rnd(0,stones.count);
+		spToGive.DropStone(stones[WhichStone]);
 
 
 
