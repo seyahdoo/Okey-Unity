@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 
 public class AiPlayer : Player {
@@ -21,7 +22,8 @@ public class AiPlayer : Player {
         //
         //	stone
 
-		WhichStone = rnd(0,stones.count);
+        WhichStone = rnd.Next(0, stones.Count);
+
 		spToGive.DropStone(stones[WhichStone]);
 
 
