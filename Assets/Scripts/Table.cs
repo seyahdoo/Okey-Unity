@@ -16,6 +16,7 @@ public class Table : MonoBehaviour {
     public List<Stone> GetNStone(int N)
     {
         //TODO: This
+
         return null;
     }
 
