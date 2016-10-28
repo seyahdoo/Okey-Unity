@@ -23,6 +23,11 @@ public class HumanPlayer : Player {
 
     }
 
+    public override void PlayTurn()
+    {
+        StartCoroutine(PlayTurnRoutine());
+    }
+
     private IEnumerator PlayTurnRoutine()
     {
 

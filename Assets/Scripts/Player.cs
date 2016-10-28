@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-public class Player : MonoBehaviour {
+public abstract class Player : MonoBehaviour {
 
-    public StonePlace spToGive;
-    public StonePlace spToGet;
+    public PlayerStoneOutput spToGive;
+    public PlayerStoneOutput spToGet;
 
     public bool IsAI = true;
     public bool IsMyTurn;
@@ -20,22 +20,8 @@ public class Player : MonoBehaviour {
         stones.AddRange(Stones);
     }
 
-    public void PlayTurn()
-    {
-        StartCoroutine(PlayTurnRoutine());
-    }
+    public abstract void PlayTurn();
 
-    private IEnumerator PlayTurnRoutine()
-    {
-        
-        //Play Turn Things
-        //TODO: PLAY!
-        yield return new WaitForSeconds(4f);
-
-
-        TurnFinished();
-        yield return null;
-    }
 
     protected void TurnFinished()
     {

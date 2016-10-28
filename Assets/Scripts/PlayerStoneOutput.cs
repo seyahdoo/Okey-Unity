@@ -37,7 +37,7 @@ public class PlayerStoneOutput : MonoBehaviour , IStoneDroppable , IDropHandler,
     public void DropStone(Stone stone)
     {
         stones.Push(stone);
-		Move (stone);
+		//Move (stone);
         GameManager.instance.TurnFinish();
     }
     
@@ -61,7 +61,7 @@ public class PlayerStoneOutput : MonoBehaviour , IStoneDroppable , IDropHandler,
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Debug.Log("OnPointerExit");
+        //Debug.Log("OnPointerExit");
     }
 
 }

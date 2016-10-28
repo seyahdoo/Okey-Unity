@@ -103,8 +103,10 @@ public class GameManager : MonoBehaviour {
     {
         while (true)
         {
+            Debug.Log("give turn to"+PlayerTurn);
             //players[PlayerTurn].TurnFinishedEvent += TurnFinish;
             players[PlayerTurn].PlayTurn();
+
 
             //wait for turn to finish
             yield return new WaitUntil(() => turnFinished);
@@ -113,8 +115,8 @@ public class GameManager : MonoBehaviour {
             //check if game finished
             bool isF = LogicApi.IsFinished(players[PlayerTurn].stones);
             //TODO this
-
-            PlayerTurn++;
+            //Debug.Log("Finished turn");
+            PlayerTurn = (PlayerTurn+1)%4;
             turnFinished = false;
         }
 

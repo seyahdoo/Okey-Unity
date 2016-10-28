@@ -6,12 +6,18 @@ public class AiPlayer : Player {
 
 	int random;
 	int WhichStone;
+
+    public override void PlayTurn()
+    {
+        StartCoroutine(PlayTurnRoutine());
+    }
+
     private IEnumerator PlayTurnRoutine()
     {
 
         //Play Turn Things
         //TODO: PLAY!
-        yield return new WaitForSeconds(4f);
+        //yield return new WaitForSeconds(4f);
 		System.Random rnd = new System.Random();
         //random=rnd(0,2);
 
