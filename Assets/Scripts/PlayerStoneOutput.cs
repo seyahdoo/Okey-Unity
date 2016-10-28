@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
-public class PlayerStoneOutput : MonoBehaviour {
+public class PlayerStoneOutput : MonoBehaviour , IStoneDroppable {
     
     public List<Stone> stones;
 
@@ -23,6 +24,8 @@ public class PlayerStoneOutput : MonoBehaviour {
         //TODO: This
     }
 
-
-
+    public void DropStone(Stone stone)
+    {
+        throw new NotImplementedException();
+    }
 }

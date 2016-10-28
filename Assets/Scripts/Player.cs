@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Player : MonoBehaviour {
+public abstract class Player : MonoBehaviour {
 
     public bool IsAI = true;
     public bool IsMyTurn;
@@ -21,9 +21,7 @@ public class Player : MonoBehaviour {
     {
         //Turn Started Event Trigger
         if (TurnStartedEvent != null) TurnStartedEvent();
-
-
-
+        
 
         //Play Turn Things
         //TODO: PLAY!
