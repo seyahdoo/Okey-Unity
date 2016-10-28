@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 public class Table : MonoBehaviour {
 
-    
-    public List<Stone> stones;
+
+    public List<Stone> stones = new List<Stone>();
 
 
     public void Scramle()
@@ -16,6 +16,7 @@ public class Table : MonoBehaviour {
     public List<Stone> GetNStone(int N)
     {
         //TODO: This
+
         return null;
     }
 
@@ -27,7 +28,8 @@ public class Table : MonoBehaviour {
 
     public void GiveStone(List<Stone> Stones)
     {
-        //TODO
+        stones.AddRange(Stones);
+
     }
 
 

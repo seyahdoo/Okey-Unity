@@ -24,6 +24,19 @@ public class Stone {
         Black
     }
 
+    public static StoneColor IntToStoneColor(int i)
+    {
+        switch (i)
+        {
+            case 0: return StoneColor.Black;
+            case 1: return StoneColor.Blue;
+            case 2: return StoneColor.Green;
+            case 3: return StoneColor.Red;
+            default:
+                Debug.LogError("Error in Stone.IntToStoneColor(int) input has to be 0-3, but was " + i);
+                return StoneColor.Black;
+        }
 
+    }
 
 }
