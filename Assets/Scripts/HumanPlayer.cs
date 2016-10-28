@@ -5,6 +5,14 @@ public class HumanPlayer : Player {
 
     public StonePlace[] istaka;
 
+    public void GetDeals()
+    {
+
+        //Pool.Get("Stone");
+
+
+    }
+
     private IEnumerator PlayTurnRoutine()
     {
 
