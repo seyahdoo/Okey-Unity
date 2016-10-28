@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class Table : MonoBehaviour {
 
+    
     public List<Stone> stones;
 
 
