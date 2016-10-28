@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour {
 
         (players[0] as HumanPlayer).GetDeals();
         //Start Routine
-
+        StartCoroutine(GameRoutine());
 
     }
 
