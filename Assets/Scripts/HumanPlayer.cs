@@ -3,7 +3,7 @@ using System.Collections;
 
 public class HumanPlayer : Player {
 
-	
+    public StonePlace[] istaka;
 
 
 
