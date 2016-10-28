@@ -9,27 +9,30 @@ public class PlayerStoneOutput : MonoBehaviour , IStoneDroppable {
     public Player toGet;
     public Player toGive;
 
-    public List<Stone> stones;
+    public Stack<Stone> stones = new Stack<Stone>();
 
     public Stone GetLastStone()
     {
-        //TODO: This
-        return null;
+        return stones.Pop();
     }
 
     public List<Stone> GetAllStones()
     {
-        //TODO: This
-        return null;
+        List<Stone> sl = new List<Stone>();
+        sl.AddRange(stones);
+        stones.Clear();
+
+        return sl;
     }
 
     public void Give1Stone(Stone stone)
     {
-        //TODO: This
+        stones.Push(stone);
     }
 
     public void DropStone(Stone stone)
     {
-        throw new NotImplementedException();
+        stones.Push(stone);
+        GameManager.instance.TurnFinish();
     }
 }

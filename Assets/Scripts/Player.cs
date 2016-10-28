@@ -14,7 +14,6 @@ public class Player : MonoBehaviour {
     
     public delegate void VoidDelegate();
     public event VoidDelegate TurnFinishedEvent;
-    public event VoidDelegate TurnStartedEvent;
 
     public void GiveStones(List<Stone> Stones)
     {

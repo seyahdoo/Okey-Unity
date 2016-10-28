@@ -10,6 +10,13 @@ public class GameManager : MonoBehaviour {
     public int PlayerTurn = 0;
     public bool turnFinished;
 
+    public static GameManager instance;
+
+    void Awake()
+    {
+        instance = this;
+    }
+
     void Start()
     {
         InitGame();
@@ -95,12 +102,12 @@ public class GameManager : MonoBehaviour {
     {
         while (true)
         {
-            players[PlayerTurn].TurnFinishedEvent += TurnFinish;
+            //players[PlayerTurn].TurnFinishedEvent += TurnFinish;
             players[PlayerTurn].PlayTurn();
 
             //wait for turn to finish
             yield return new WaitUntil(() => turnFinished);
-            players[PlayerTurn].TurnFinishedEvent -= TurnFinish;
+            //players[PlayerTurn].TurnFinishedEvent -= TurnFinish;
 
             //check if game finished
             bool isF = LogicApi.IsFinished(players[PlayerTurn].stones);
