@@ -69,7 +69,8 @@ public class GameManager : MonoBehaviour {
         players[1].GiveStones(table.GetNStone(14));
         players[2].GiveStones(table.GetNStone(14));
         players[3].GiveStones(table.GetNStone(14));
-        
+
+        (players[0] as HumanPlayer).GetDeals();
         //Start Routine
 
 

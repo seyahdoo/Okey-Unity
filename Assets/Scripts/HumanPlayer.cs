@@ -9,7 +9,15 @@ public class HumanPlayer : Player {
     {
 
         //Pool.Get("Stone");
-
+        int i = 0;
+        foreach (var stone in stones)
+        {
+            istaka[i].DropStone(stone);
+            GameObject go = Pool.Get("Stone");
+            go.transform.position = istaka[i].transform.position;
+            go.transform.SetParent(istaka[i].transform,false);
+            i++;
+        }
 
     }
 
