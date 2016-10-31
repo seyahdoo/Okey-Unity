@@ -27,6 +27,7 @@ public class AiPlayer : Player {
         //	//Oyuncudan tas al
         //
         //	stone
+        yield return new WaitForSeconds(1f);
 
         WhichStone = rnd.Next(0, stones.Count);
 
