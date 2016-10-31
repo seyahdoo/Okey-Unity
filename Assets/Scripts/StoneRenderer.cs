@@ -18,7 +18,7 @@ public class StoneRenderer : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void Render()
     {
         //TODO: change sprite or look with "stone" info inside
-        print("Rendered");
+        //print("Rendered");
         if(stone.Number == 0)
         {
             print("wtf");

@@ -18,7 +18,7 @@ public class GameRenderer : MonoBehaviour {
     {
         //TODO: render a stone that is not draggable or changable who will stay on "to"
         //      pulled from pool, spawned at from and will be going to "to" with a speed
-        print("Rendering ghost!");
+        //print("Rendering ghost!");
 
 		GameObject go = Pool.Get("Stone");
 		if (!isHidden) {

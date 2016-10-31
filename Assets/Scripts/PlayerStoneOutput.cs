@@ -57,7 +57,7 @@ public class PlayerStoneOutput : MonoBehaviour , IStoneDroppable , IDropHandler,
     {
         if (eventData.pointerDrag != null)
         {
-            Debug.Log(eventData.pointerDrag.transform.name);
+            //Debug.Log(eventData.pointerDrag.transform.name);
         }
     }
 

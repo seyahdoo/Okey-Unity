@@ -33,7 +33,7 @@ public class StoneSpriteFinder : MonoBehaviour {
 
         str += stone.Number;
 
-        Debug.Log(str);
+        //Debug.Log(str);
 
         return _sprites.Where(a => a.name == str).First();
     }
