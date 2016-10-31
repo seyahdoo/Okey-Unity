@@ -16,6 +16,7 @@ public class StoneRenderer : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         //TODO: change sprite or look with "stone" info inside
 
+		StoneSpriteFinder.findSprite (stone);
     }
 
     public void OnBeginDrag(PointerEventData eventData)
