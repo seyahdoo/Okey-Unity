@@ -10,10 +10,10 @@ public class PlayerStoneOutput : MonoBehaviour , IStoneDroppable , IDropHandler,
    
     public Player toGet;
     public Player toGive;
+    public bool isPickable;
+    
 
     public Stack<Stone> stones = new Stack<Stone>();
-	float lerpingtime;
-	Transform StartPos;
 
     public Stone GetLastStone()
     {
@@ -37,7 +37,7 @@ public class PlayerStoneOutput : MonoBehaviour , IStoneDroppable , IDropHandler,
     public void DropStone(Stone stone)
     {
         stones.Push(stone);
-		//Move (stone);
+        Render();
         GameManager.instance.TurnFinish();
     }
     
@@ -62,6 +62,27 @@ public class PlayerStoneOutput : MonoBehaviour , IStoneDroppable , IDropHandler,
     public void OnPointerExit(PointerEventData eventData)
     {
         //Debug.Log("OnPointerExit");
+    }
+
+    public void Render()
+    {
+        //get last stone,
+        Stone s = stones.Peek();
+
+        if (isPickable)
+        {
+            GameObject sg = Pool.Get("Stone");
+            sg.transform.SetParent(this.transform);
+            StoneRenderer sr = sg.GetComponent<StoneRenderer>();
+            sr.stone = s;
+            sr.Render();
+        }
+        else
+        {
+            GameRenderer.RenderGhostStone(s, transform.position, transform.position, false);
+        }
+        
+
     }
 
 }
