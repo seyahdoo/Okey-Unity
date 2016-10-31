@@ -35,7 +35,7 @@ public class StoneSpriteFinder : MonoBehaviour {
 
         //Debug.Log(str);
 
-        return _sprites.Where(a => a.name == str).FirstOrDefault();
+        return _sprites.Where(a => a.name == str).First();
     }
 
 
