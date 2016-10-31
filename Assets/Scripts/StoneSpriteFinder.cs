@@ -6,10 +6,27 @@ public class StoneSpriteFinder : MonoBehaviour {
 	
     public static Sprite findSprite(Stone stone)
     {
-        //TODO:
+        string str = "Tas-";
+        
+        switch (stone.Color)
+        {
+            case Stone.StoneColor.Red:
+                str += "Kirmizi-";
+                break;
+            case Stone.StoneColor.Blue:
+                str += "Mavi-";
+                break;
+            case Stone.StoneColor.Green:
+                str += "Yesil-";
+                break;
+            case Stone.StoneColor.Black:
+                str += "Siyah-";
+                break;
+        }
 
+        str += stone.Number;
 
-        return null;
+        return Resources.Load("Sprites/" + str) as Sprite;
     }
 
 
