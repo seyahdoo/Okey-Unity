@@ -5,11 +5,18 @@ using System;
 
 public class StoneRenderer : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler  {
     
+        
     public Stone stone;
     public bool IsMovable;
     public bool IsHidden;
 
     public Transform parentToReturnTo = null;
+
+    public void Render()
+    {
+        //TODO: change sprite or look with "stone" info inside
+
+    }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
