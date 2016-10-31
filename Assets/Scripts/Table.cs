@@ -50,7 +50,7 @@ public class Table : MonoBehaviour {
         StoneRenderer sr = go.GetComponent<StoneRenderer>();
         sr.stone = new Stone(0, Stone.StoneColor.Red, false);
         sr.Render();
-        go.transform.SetParent(ZeroSpawn);
+        go.transform.SetParent(ZeroSpawn,false);
 
 
         return stones.Pop();
