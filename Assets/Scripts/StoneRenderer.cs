@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.EventSystems;
 using System;
+using UnityEngine.UI;
 
 public class StoneRenderer : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler  {
     
@@ -10,13 +11,15 @@ public class StoneRenderer : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public bool IsMovable;
     public bool IsHidden;
 
+    public Image image;
+
     public Transform parentToReturnTo = null;
 
     public void Render()
     {
         //TODO: change sprite or look with "stone" info inside
-
-		StoneSpriteFinder.findSprite (stone);
+        print("Rendered");
+		 image.sprite = StoneSpriteFinder.findSprite (stone);
     }
 
     public void OnBeginDrag(PointerEventData eventData)

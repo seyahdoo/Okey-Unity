@@ -18,6 +18,12 @@ public class HumanPlayer : Player {
             GameObject go = Pool.Get("Stone");
             go.transform.position = istaka[i].transform.position;
             go.transform.SetParent(istaka[result[i]].transform,false);
+
+            //show images -> Seyyid
+            StoneRenderer sr = go.GetComponent<StoneRenderer>();
+            sr.stone = stone; 
+            sr.Render();
+            
             i++;
         }
 
