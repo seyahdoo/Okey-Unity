@@ -12,8 +12,7 @@ public class PlayerStoneOutput : MonoBehaviour , IStoneDroppable , IDropHandler,
     public Player toGive;
 
     public Stack<Stone> stones = new Stack<Stone>();
-	float lerpingtime;
-	Transform StartPos;
+
 
     public Stone GetLastStone()
     {
@@ -37,7 +36,7 @@ public class PlayerStoneOutput : MonoBehaviour , IStoneDroppable , IDropHandler,
     public void DropStone(Stone stone)
     {
         stones.Push(stone);
-		//Move (stone);
+
         GameManager.instance.TurnFinish();
     }
     
@@ -49,6 +48,7 @@ public class PlayerStoneOutput : MonoBehaviour , IStoneDroppable , IDropHandler,
             stoneRenderer.parentToReturnTo = this.transform;
             DropStone(stoneRenderer.stone);
         }
+
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -63,5 +63,10 @@ public class PlayerStoneOutput : MonoBehaviour , IStoneDroppable , IDropHandler,
     {
         //Debug.Log("OnPointerExit");
     }
+
+
+
+
+
 
 }
