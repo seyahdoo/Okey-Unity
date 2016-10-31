@@ -113,7 +113,8 @@ public class GameManager : MonoBehaviour {
             //players[PlayerTurn].TurnFinishedEvent -= TurnFinish;
 
             //check if game finished
-            bool isF = LogicApi.IsFinished(players[PlayerTurn].stones);
+            //TODO???
+            //bool isF = LogicApi.IsFinished(players[PlayerTurn].stones);
             //TODO this
             //Debug.Log("Finished turn");
             PlayerTurn = (PlayerTurn+1)%4;

@@ -81,7 +81,7 @@ public class PlayerStoneOutput : MonoBehaviour , IStoneDroppable , IDropHandler,
         }
         else
         {
-            GameRenderer.RenderGhostStone(s, transform.position, transform.position, false);
+            GameRenderer.RenderGhostStone(s, transform, transform, false);
         }
         
 
