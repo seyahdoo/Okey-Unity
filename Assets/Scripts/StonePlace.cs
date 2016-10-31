@@ -8,6 +8,9 @@ public class StonePlace : MonoBehaviour ,IStoneDroppable, IDropHandler , IPointe
 
     public Stone stone;
     int countChild;
+
+    public Table table;
+
     public void DropStone(Stone stone)
     {
         this.stone = stone;
@@ -20,6 +23,12 @@ public class StonePlace : MonoBehaviour ,IStoneDroppable, IDropHandler , IPointe
         {
             if (countChild ==0)
             {
+                if (stoneRenderer.stone.Number == 0)
+                {
+                    stoneRenderer.stone = table.PullForPlayer();
+                    stoneRenderer.Render();
+                } 
+
                 stoneRenderer.parentToReturnTo = this.transform;
                 DropStone(stoneRenderer.stone);
             }

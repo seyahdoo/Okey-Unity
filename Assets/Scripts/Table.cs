@@ -5,7 +5,9 @@ using System.Collections.Generic;
 public class Table : MonoBehaviour {
 
 
-    public Stack<Stone> stones = new Stack<Stone>();
+    public static Stack<Stone> stones = new Stack<Stone>();
+
+    public Transform ZeroSpawn;
 
     
     public void Scramle()
@@ -41,15 +43,32 @@ public class Table : MonoBehaviour {
         return stones.Pop();
     }
 
+    public Stone PullForPlayer()
+    {
+        print("Pull");
+        GameObject go = Pool.Get("Stone");
+        StoneRenderer sr = go.GetComponent<StoneRenderer>();
+        sr.stone = new Stone(0, Stone.StoneColor.Red, false);
+        sr.Render();
+        go.transform.SetParent(ZeroSpawn);
+
+
+        return stones.Pop();
+    }
+
     public void GiveStone(List<Stone> Stones)
     {
-       
+        stones.Clear();
+
         foreach (var item in Stones)
         {
             stones.Push(item);
         }
         
     }
+
+
+
 
 
 }

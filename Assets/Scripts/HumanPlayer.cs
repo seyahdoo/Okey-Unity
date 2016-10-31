@@ -7,6 +7,8 @@ public class HumanPlayer : Player {
 
     public StonePlace[] istaka;
 
+    public Table table;
+
     public void GetDeals()
     {
         var result = Enumerable.Range(0, 30).OrderBy(g => Guid.NewGuid()).Take(15).ToArray();
@@ -44,7 +46,6 @@ public class HumanPlayer : Player {
 
 
         //finished
-        TurnFinished();
 
         yield return null;
     }

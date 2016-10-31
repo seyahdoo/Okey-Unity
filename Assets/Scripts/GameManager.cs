@@ -49,8 +49,8 @@ public class GameManager : MonoBehaviour {
         }
 
         //2 joker
-        sl.Add(new Stone(0, Stone.StoneColor.Black, false));
-        sl.Add(new Stone(0, Stone.StoneColor.Black, false));
+        //sl.Add(new Stone(0, Stone.StoneColor.Black, false));
+        //sl.Add(new Stone(0, Stone.StoneColor.Black, false));
 
 
 
