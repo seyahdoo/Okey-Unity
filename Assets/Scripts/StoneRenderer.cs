@@ -19,6 +19,10 @@ public class StoneRenderer : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         //TODO: change sprite or look with "stone" info inside
         print("Rendered");
+        if(stone.Number == 0)
+        {
+            print("wtf");
+        }
 		 image.sprite = StoneSpriteFinder.findSprite (stone);
     }
 
