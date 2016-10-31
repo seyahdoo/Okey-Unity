@@ -23,9 +23,4 @@ public abstract class Player : MonoBehaviour {
     public abstract void PlayTurn();
 
 
-    protected void TurnFinished()
-    {
-        if (TurnFinishedEvent != null) TurnFinishedEvent();
-    }
-
 }
