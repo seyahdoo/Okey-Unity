@@ -38,6 +38,7 @@ public class PlayerStoneOutput : MonoBehaviour , IStoneDroppable , IDropHandler,
     {
         stones.Push(stone);
         Render();
+
         GameManager.instance.TurnFinish();
     }
     
@@ -49,6 +50,7 @@ public class PlayerStoneOutput : MonoBehaviour , IStoneDroppable , IDropHandler,
             stoneRenderer.parentToReturnTo = this.transform;
             DropStone(stoneRenderer.stone);
         }
+
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -84,5 +86,9 @@ public class PlayerStoneOutput : MonoBehaviour , IStoneDroppable , IDropHandler,
         
 
     }
+
+
+
+
 
 }
