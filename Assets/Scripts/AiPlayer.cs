@@ -44,7 +44,6 @@ public class AiPlayer : Player {
         //STONE DAN BİRİNİ SEÇ AT.
 
 
-        TurnFinished();
         yield return null;
     }
 

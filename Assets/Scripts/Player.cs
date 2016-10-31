@@ -12,8 +12,6 @@ public abstract class Player : MonoBehaviour {
     public bool IsMyTurn;
     public List<Stone> stones = new List<Stone>();
     
-    public delegate void VoidDelegate();
-    public event VoidDelegate TurnFinishedEvent;
 
     public void GiveStones(List<Stone> Stones)
     {
