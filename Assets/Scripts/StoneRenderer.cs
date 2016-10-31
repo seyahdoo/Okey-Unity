@@ -28,6 +28,7 @@ public class StoneRenderer : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (!IsMovable) return;
         parentToReturnTo = this.transform.parent;
         this.transform.SetParent(this.transform.parent.parent,false);
         GetComponent<CanvasGroup>().blocksRaycasts = false;
@@ -35,11 +36,14 @@ public class StoneRenderer : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnDrag(PointerEventData eventData)
     {
+        if (!IsMovable) return;
         this.transform.position = eventData.position;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (!IsMovable) return;
+
         this.transform.SetParent(parentToReturnTo, false);
         GetComponent<CanvasGroup>().blocksRaycasts = true;
     }

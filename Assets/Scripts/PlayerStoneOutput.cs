@@ -37,16 +37,21 @@ public class PlayerStoneOutput : MonoBehaviour , IStoneDroppable , IDropHandler,
     public void DropStone(Stone stone)
     {
         stones.Push(stone);
-        Render();
+        //Render();
 
         GameManager.instance.TurnFinish();
     }
     
-    public void OnDrop(PointerEventData eventData)
+    public virtual void OnDrop(PointerEventData eventData)
     {
+        print("dropped");
         StoneRenderer stoneRenderer = eventData.pointerDrag.GetComponent<StoneRenderer>();
         if (stoneRenderer != null)
         {
+            if (!stoneRenderer.IsMovable) return;
+            stoneRenderer.IsMovable = false;
+            stoneRenderer.transform.SetParent(this.transform);
+
             stoneRenderer.parentToReturnTo = this.transform;
             DropStone(stoneRenderer.stone);
         }
@@ -66,6 +71,9 @@ public class PlayerStoneOutput : MonoBehaviour , IStoneDroppable , IDropHandler,
         //Debug.Log("OnPointerExit");
     }
 
+    /// <summary>
+    /// çöp aslında bu.
+    /// </summary>
     public void Render()
     {
         //get last stone,
@@ -74,6 +82,7 @@ public class PlayerStoneOutput : MonoBehaviour , IStoneDroppable , IDropHandler,
         if (isPickable)
         {
             GameObject sg = Pool.Get("Stone");
+            //sg.transform.position = this.transform.position;
             sg.transform.SetParent(this.transform);
             StoneRenderer sr = sg.GetComponent<StoneRenderer>();
             sr.stone = s;
@@ -81,7 +90,7 @@ public class PlayerStoneOutput : MonoBehaviour , IStoneDroppable , IDropHandler,
         }
         else
         {
-            GameRenderer.RenderGhostStone(s, transform, transform, false);
+            GameRenderer.RenderGhostStone(s, transform, transform, false,false);
         }
         
 

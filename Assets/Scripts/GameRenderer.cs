@@ -14,21 +14,22 @@ public class GameRenderer : MonoBehaviour {
     /// <param name="stone"></param>
     /// <param name="from"></param>
     /// <param name="to"></param>
-    public static void RenderGhostStone(Stone stone, Transform from, Transform to, bool isHidden)
+    public static void RenderGhostStone(Stone stone, Transform from, Transform to, bool isHidden,bool isMovable)
     {
         //TODO: render a stone that is not draggable or changable who will stay on "to"
         //      pulled from pool, spawned at from and will be going to "to" with a speed
         //print("Rendering ghost!");
 
 		GameObject go = Pool.Get("Stone");
-		if (!isHidden) {
-            StoneRenderer sr = go.GetComponent<StoneRenderer>();
+        StoneRenderer sr = go.GetComponent<StoneRenderer>();
+        if (!isHidden) {
             sr.stone = stone;
             sr.Render();
 		}
+        sr.IsMovable = isMovable;
         //todo
-        go.transform.position = to.position;
-        go.transform.SetParent(to);
+        //go.transform.position = to.position;
+        go.transform.SetParent(to, false);
 		//StartCoroutine(Move(go));
     }
 
