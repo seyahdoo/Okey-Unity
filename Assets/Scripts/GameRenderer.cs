@@ -23,19 +23,21 @@ public class GameRenderer : MonoBehaviour {
 		if (!isHidden) {
 			go.GetComponent<StoneRenderer> ().Render ();
 		}
-		StartCoroutine(Move(go));
+        //todo
+        go.transform.position = to;
+		//StartCoroutine(Move(go));
     }
 
-	IEnumerator Move(GameObject go)
-
-	{	
-		while(lerpingtime < 3)
-		{	
-			go.transform.position = Vector3.Lerp(from, to, lerpingtime/3);
-			lerpingtime += Time.deltaTime;
-			yield return new WaitForEndOfFrame ();
-		}
-	}
+	//IEnumerator Move(GameObject go)
+    //
+	//{	
+	//	while(lerpingtime < 3)
+	//	{	
+	//		go.transform.position = Vector3.Lerp(from, to, lerpingtime/3);
+	//		lerpingtime += Time.deltaTime;
+	//		yield return new WaitForEndOfFrame ();
+	//	}
+	//}
 
 
 
