@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+/// <summary>
+/// The data class that holds a stone info
+/// </summary>
 [System.Serializable]
 public class Stone {
 

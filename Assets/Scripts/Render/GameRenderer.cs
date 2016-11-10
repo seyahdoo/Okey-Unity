@@ -3,17 +3,12 @@ using System.Collections;
 
 public class GameRenderer : MonoBehaviour {
     
-	float lerpingtime;
+	//float lerpingtime;
 
-    //TODO: Design how to render the game???
-    
 
     /// <summary>
     /// will be going to render ai movements
     /// </summary>
-    /// <param name="stone"></param>
-    /// <param name="from"></param>
-    /// <param name="to"></param>
     public static void RenderGhostStone(Stone stone, Transform from, Transform to, bool isHidden,bool isMovable)
     {
         //TODO: render a stone that is not draggable or changable who will stay on "to"

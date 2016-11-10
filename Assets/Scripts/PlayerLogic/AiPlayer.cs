@@ -34,6 +34,7 @@ public class AiPlayer : Player {
 		spToGive.DropStone(stones[WhichStone]);
 
         //print("AI THROW");
+        ///Rendering the stone which the ai has thrown
         GameRenderer.RenderGhostStone(stones[WhichStone], this.transform, spToGive.transform, false,spToGive.isPickable);
 
 

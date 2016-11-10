@@ -71,8 +71,9 @@ public class PlayerStoneOutput : MonoBehaviour , IStoneDroppable , IDropHandler,
         //Debug.Log("OnPointerExit");
     }
 
+    //TODO: Delete this mess
     /// <summary>
-    /// çöp aslında bu.
+    /// çöp aslında bu. wont be used!
     /// </summary>
     public void Render()
     {

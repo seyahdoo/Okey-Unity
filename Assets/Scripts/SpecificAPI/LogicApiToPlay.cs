@@ -4,8 +4,10 @@ using System.Collections.Generic;
 
 public partial class LogicApi
 {
-
-    public static AiAction AIPlay(List<Stone> AiStones,Stone PlayerStone)
+    /// <summary>
+    /// This cant be logical and wont be used!
+    /// </summary>
+    public static AiAction AIPlay(List<Stone> AiStones,Stone PlayerStone,Stone TablePeek)
     {
         //Should't say new Stone() !?
         //TODO: Write this stuff

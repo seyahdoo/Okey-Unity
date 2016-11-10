@@ -18,7 +18,7 @@ public class TestAiPlay {
         sl.Add(new Stone(2, Stone.StoneColor.Black, false));
         //..
 
-        LogicApi.AiAction act = LogicApi.AIPlay(sl, new Stone(5, Stone.StoneColor.Red, true));
+        LogicApi.AiAction act = LogicApi.AIPlay(sl, new Stone(5, Stone.StoneColor.Red, true),new Stone(4,Stone.StoneColor.Black,false));
 
         if (act.Action != LogicApi.AiAction.PlayAction.GetFromPlayer)
             failCount++;        //it we are not happy with the result count the fails

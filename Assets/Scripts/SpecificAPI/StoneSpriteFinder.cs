@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Linq;
 
 public class StoneSpriteFinder : MonoBehaviour {
 
 	public static Sprite[] _sprites;
 
+    /// <summary>
+    /// give the stone as data and get its sprite!
+    /// </summary>
+    /// <param name="stone">Stone data</param>
+    /// <returns>Sprite as it should be seen</returns>
     public static Sprite findSprite(Stone stone)
     {
         if (stone.Number == 0) return null;

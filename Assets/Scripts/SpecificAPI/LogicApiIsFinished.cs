@@ -10,6 +10,10 @@ public partial class LogicApi
         //Shouldn't say new Stone() !?
         //TODO: Write this stuff
 
+        //yeah write new List<Color> every time he drops a stone, that cant be killing the machine's RAM
+        //TODO: Delete all this code and rewrite it!
+
+
         List<Color> colorRed = new List<Color>();
         List<Color> colorBlue = new List<Color>();
         List<Color> colorGreen = new List<Color>();
